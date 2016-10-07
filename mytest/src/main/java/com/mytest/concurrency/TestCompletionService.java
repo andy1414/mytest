@@ -1,4 +1,4 @@
-package com.mytest.concurrency.chapter6;
+package com.mytest.concurrency;
 
 import java.util.Random;
 import java.util.concurrent.Callable;

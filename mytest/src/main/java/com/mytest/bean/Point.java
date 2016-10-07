@@ -1,4 +1,4 @@
-package com.mytest.concurrency.chapter4;
+package com.mytest.bean;
 
 /**
  * Created by admin on 2016/6/15.

@@ -1,4 +1,4 @@
-package com.mytest.concurrency.chapter2;
+package com.mytest.concurrency;
 
 import java.util.ArrayList;
 import java.util.List;

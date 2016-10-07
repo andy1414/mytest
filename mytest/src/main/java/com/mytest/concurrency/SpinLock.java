@@ -1,4 +1,4 @@
-package com.mytest.concurrency.locktest;
+package com.mytest.concurrency;
 
 import java.util.concurrent.atomic.AtomicReference;
 

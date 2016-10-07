@@ -1,4 +1,4 @@
-package com.mytest.concurrency.chapter3;
+package com.mytest.concurrency;
 
 /**
  * Created by admin on 2016/6/12.

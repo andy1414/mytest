@@ -1,4 +1,4 @@
-package com.mytest.concurrency.chapter6;
+package com.mytest.concurrency;
 
 import java.io.IOException;
 import java.net.ServerSocket;

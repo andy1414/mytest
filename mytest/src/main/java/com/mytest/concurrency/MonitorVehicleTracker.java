@@ -1,8 +1,10 @@
-package com.mytest.concurrency.chapter4;
+package com.mytest.concurrency;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.mytest.bean.MutablePoint;
 
 /**
  * Created by admin on 2016/6/15.

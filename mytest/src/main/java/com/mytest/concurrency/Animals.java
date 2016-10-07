@@ -1,4 +1,4 @@
-package com.mytest.concurrency.chapter3;
+package com.mytest.concurrency;
 
 import java.util.*;
 

@@ -3,12 +3,12 @@ package com.mytest.algorithm;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-//CÎªclient¿Í»§¶Ë£¬SÎªservice·şÎñÆ÷
+//Cä¸ºclientå®¢æˆ·ç«¯ï¼ŒSä¸ºserviceæœåŠ¡å™¨
 public class ConsistentHash<c,s> {
-  //ĞéÄâ½ÚµãµÄ¸öÊı£¬Ä¬ÈÏ200
+  //è™šæ‹ŸèŠ‚ç‚¹çš„ä¸ªæ•°ï¼Œé»˜è®¤200
   private int virtualNum;
-  private long unit;//ÒÆ¶¯
-  //´æ´¢·şÎñÆ÷µÄÈİÆ÷
+  private long unit;//ç§»åŠ¨
+  //å­˜å‚¨æœåŠ¡å™¨çš„å®¹å™¨
   private TreeMap<Integer,String> map = new TreeMap<>();
   public ConsistentHash() {
       this(200);
@@ -17,34 +17,34 @@ public class ConsistentHash<c,s> {
       this.virtualNum = virtualNum;
       unit = ((long)(Integer.MAX_VALUE/virtualNum)<<1)-2;
   }
-  //Ìí¼Ó·şÎñÆ÷½áµã
+  //æ·»åŠ æœåŠ¡å™¨ç»“ç‚¹
   public void add(String s){
       int hash = hash(s);
-      //±£Ö¤·ÖÉ¢µ½IntegerµÄ·¶Î§ÄÚ
+      //ä¿è¯åˆ†æ•£åˆ°Integerçš„èŒƒå›´å†…
       for (int i = 0; i < virtualNum; i++) 
           map.put((int)(hash+i*unit), s);
   }
-  //É¾³ı·şÎñÆ÷½áµã
+  //åˆ é™¤æœåŠ¡å™¨ç»“ç‚¹
   public void remove(String s){
       int hash = hash(s);
-      //±£Ö¤·ÖÉ¢µ½IntegerµÄ·¶Î§ÄÚ,ÏÈ×ª»»ÎªintÔÙ×ª»»ÎªInteger
+      //ä¿è¯åˆ†æ•£åˆ°Integerçš„èŒƒå›´å†…,å…ˆè½¬æ¢ä¸ºintå†è½¬æ¢ä¸ºInteger
       for (int i = 0; i < virtualNum; i++) 
           map.remove((Integer)(int)(hash+i*unit));
   }
-  //»ñÈ¡·şÎñÆ÷
+  //è·å–æœåŠ¡å™¨
   public String get(String c){
       if(map.isEmpty())
           return null;
       int hash = hash(c);
-      //TreeMap¶ÀÓĞµÄÈ¡ÉÏºÍÈ¡ÏÂ·½·¨
-      //ceiling ºÍ floor (MathÖĞÊÇceil)
+      //TreeMapç‹¬æœ‰çš„å–ä¸Šå’Œå–ä¸‹æ–¹æ³•
+      //ceiling å’Œ floor (Mathä¸­æ˜¯ceil)
       Entry<Integer,String> entry = map.ceilingEntry(hash);
-      if(entry == null) //¿Õ¾Í´ú±íĞèÒª»Ø»·ÁË
+      if(entry == null) //ç©ºå°±ä»£è¡¨éœ€è¦å›ç¯äº†
           return map.firstEntry().getValue();
       else
           return entry.getValue();
   }
-  //ÔÙ´Î·ÖÉ¢µÄhash·½·¨
+  //å†æ¬¡åˆ†æ•£çš„hashæ–¹æ³•
   private int hash(Object o) {
       if(o == null)
           return 0;

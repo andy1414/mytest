@@ -1,9 +1,11 @@
-package com.mytest.concurrency.chapter4;
+package com.mytest.concurrency;
 
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+
+import com.mytest.bean.Point;
 
 /**
  * Created by admin on 2016/6/15.

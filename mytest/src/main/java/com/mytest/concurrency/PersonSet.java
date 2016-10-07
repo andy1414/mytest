@@ -1,4 +1,4 @@
-package com.mytest.concurrency.chapter4;
+package com.mytest.concurrency;
 
 import java.util.HashSet;
 import java.util.Set;

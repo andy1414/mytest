@@ -1,4 +1,4 @@
-package com.mytest.concurrency.chapter5;
+package com.mytest.concurrency;
 
 /**
  * StaticUtilities
